@@ -1,18 +1,25 @@
-# ارایه ها
+## Arrays
 
-توی این کد من ساختار داده ارایه را نوشتم.
-ارایه معمولا برای داده هایی استفاده میشن که تعداد مشخص دارن و از یک نوع هستن(مثلا عدد).
-برای دسترسی به اعضای هر ارایه میتونیم از index ارایه استفاده کنیم که به ترتیب از 0 شروع میشن.
-داخل این کد **printArray**برای پیمایش و نشان دادن همه ی اعضا ارایه استفاده میشه که پیچیدگی زمانی n داره.
-و**insertarr**برای اضافه کردن عضو جدید استفاده میشه و با O(n) نسبت به ساختار داده های دیگه زمان بیشتری برای اضافه کردن عضو جدید نیاز داریم.
-بعدی **delarr** هست که من برای حذف یک عضو و جایگذینی اون با صفر استفاده کردم 
-و در اخر جستجوی خطی هست که مرتبه زمانی n داره و در حقیقت همه ی اعضای ارایه را میگرده و اولین عضوی که پیدا کنه را بر میگردونه 
-در فایل دیگه جستجوی خطی مینویسم که مرتبه زمانی O(logn) داره و بسیار سریع تر عمل میکنه.
+In this code, I have implemented the **Array** data structure. Arrays are commonly used to store data that has a fixed size and consists of elements of the same type (e.g., integers).
 
-## جستجوی باینری
+To access elements of an array, we can use the **index**, which starts from 0 and increments by 1 for each element. 
 
- این جستجوی باینری یا دودویی ادامه بحث ارایه ها میشه که سریع تر از جستجوی خطی عمل میکنه اما یک مشکلی داره بنظر من.
-همون طور که داخل این کد میبینید من یک ارایه با تعداد اعضای رندوم درست کردم و بعدش به مشکلی که جستجوی باینری داره میرسیم؛ توی این جستجو باید همه ی داده ها مرتب باشن که اگر داده های ما نامرتب باشن ممکنه خود این کار به زمان جستجو اضافه کنه.
-بعد از مرتب سازی حالا میتونیم جستجو کنیم توی این کار ما اول ارایه را به دو قسمت تقسیم میکنیم و بعد مقایسه میکنیم که عدد ما کوچک تر یا بزرگتر خود عدد مورد نظر ماست؛ و اینکار ادامه میدیم تا عدد مورد نظر پیدا کنیم.
+In this code:
+- The function **`printArray`** is used to traverse the array and display all of its elements. It has a time complexity of O(n), meaning that it processes each element of the array once.
+- The function **`insertarr`** is used to insert a new element at a specific position in the array. Since arrays have a fixed size, adding an element requires shifting the existing elements to the right, which results in a time complexity of O(n), making it less efficient than other data structures for insertion.
+- The function **`delarr`** removes an element from the array and replaces it with zero. This function also has a time complexity of O(n) because it requires shifting elements to the left to fill the gap after the element is removed.
+- Finally, the **linear search** is implemented with a time complexity of O(n). It checks each element of the array sequentially and returns the index of the first matching element. This search continues until it either finds the element or completes the search without success. In a subsequent file, I will implement a more efficient search algorithm that has a time complexity of O(log n), which performs much faster.
 
+---
 
+## Binary Search
+
+Binary Search is an improvement on the array search that works faster than linear search. However, there is an important caveat.
+
+As shown in this code, I created an array with random elements. The issue with Binary Search is that the array must be **sorted** for it to work correctly. If the data is not sorted, the time spent sorting the array might negate the advantages of binary search.
+
+After sorting the array, we can perform binary search. In this process, we divide the array into two parts, then compare the middle element to the target. Based on the result, we either search in the left half (if the target is smaller) or the right half (if the target is larger). This process continues, halving the search space with each step, until we find the target element.
+
+---
+
+This version keeps the explanation concise while maintaining clarity and providing detailed insights into the performance and limitations of arrays and search algorithms.
